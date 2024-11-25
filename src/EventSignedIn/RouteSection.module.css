@@ -1,0 +1,57 @@
+.routeSection {
+    background-color:white;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 40px;
+    padding: 50px 70px;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 991px) {
+    .routeSection {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+  
+  .routeTitle {
+    color: #1d064a;
+    text-align: center;
+    font: 600 35px Poppins;
+  }
+  
+  @media (max-width: 991px) {
+    .routeTitle {
+      max-width: 100%;
+    }
+  }
+  
+  .routeMapWrapper {
+    /* margin-right: -50px; */
+    background-color: #9992b2;
+    align-self: center;
+    display: flex;
+    margin-top: 42px;
+    width: 902px;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+  }
+  
+  @media (max-width: 991px) {
+    .routeMapWrapper {
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  }
+  
+  .routeMap {
+    aspect-ratio: 1.7;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    
+  }

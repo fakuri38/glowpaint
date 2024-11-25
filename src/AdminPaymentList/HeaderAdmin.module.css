@@ -1,0 +1,83 @@
+.header {
+    background-color: rgba(109, 88, 139, 1);
+    align-self: stretch;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 40px 418px;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 1);
+    justify-content: start;
+    padding: 20px 24px;
+  }
+  
+  .div {
+    align-self: stretch;
+    display: flex;
+    min-width: 240px;
+    width: 100%;
+    align-items: center;
+    gap: 40px 100px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-basis: 0%;
+    margin: auto 0;
+    padding: 0 30px;
+  }
+  
+  .div2 {
+    align-self: stretch;
+    display: flex;
+    min-width: 240px;
+    align-items: end;
+    gap: 40px 120px;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin: auto 0;
+  }
+  
+  .glowpaintrun {
+    font: 400 25px Lilita One, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  .div3 {
+    display: flex;
+    min-width: 240px;
+    align-items: center;
+    gap: 20px;
+    justify-content: start;
+    flex-wrap: wrap;
+    font: 500 18px Poppins, sans-serif;
+  }
+  
+  .home, .participationList, .paymentStatus, .kitCollection, .attendanceList {
+    /*align-self: stretch;*/
+    margin: auto 0;
+  }
+  
+  .signOut {
+    align-self: stretch;
+    border-radius: 12px;
+    background-color: rgba(206, 187, 250, 1);
+    width: 95px;
+    margin: auto 0;
+    padding: 10px;
+    font: 600 18px Poppins, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .header {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+    
+    .div {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+    
+    .div2, .div3 {
+      max-width: 100%;
+    }
+  }

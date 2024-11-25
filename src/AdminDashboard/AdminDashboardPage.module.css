@@ -1,0 +1,9 @@
+.adminDashboard {
+    background-color: rgba(248, 248, 248, 1);
+    display: flex;
+    padding-bottom: 45px;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    color: rgba(0, 0, 0, 1);
+  }

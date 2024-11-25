@@ -1,0 +1,68 @@
+.termsSection {
+    background-color: #E6E6E6;
+    padding: 2.5rem 0;
+    margin: 0;
+  }
+  
+  .title {
+    color: #1D064A;
+    font-size: 2.1875rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 2rem;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: center;
+    gap: 4.0625rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  
+  .termsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 46.9375rem;
+  }
+  
+  .termItem {
+    color: #1D064A;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  .termItem::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+  }
+  
+  .illustration {
+    width: 29.5625rem;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  @media (max-width: 1024px) {
+    .content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .illustration {
+      max-width: 100%;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .termItem {
+      transition: none;
+    }
+  }

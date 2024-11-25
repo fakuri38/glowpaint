@@ -1,0 +1,57 @@
+.details {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    margin-top: 36px;
+    width: 100%;
+    max-width: 1396px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 34px 75px;
+  }
+  
+  .img2 {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 150px;
+    align-self: stretch;
+    margin: auto 0;
+  }
+  
+  .eventTime {
+    align-self: stretch;
+    display: flex;
+    min-width: 240px;
+    flex-direction: column;
+    width: 545px;
+    margin: auto 0;
+  }
+  
+  .glowPaintRun {
+    align-self: start;
+    font: 700 48px Afacad, sans-serif;
+  }
+  
+  .eventDate {
+    align-self: end;
+    margin-top: 26px;
+    font: 800 40px Poppins, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .details {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+    
+    .eventTime {
+      max-width: 100%;
+    }
+    
+    .glowPaintRun {
+      font-size: 40px;
+    }
+  }

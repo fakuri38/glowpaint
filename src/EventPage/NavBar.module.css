@@ -1,0 +1,111 @@
+.navbar {
+    background-color: #6d588b;
+    display: flex;
+    min-height: 87px;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+    justify-content: flex-start;
+    padding: 20px 24px;
+    margin: 0;
+  }
+  
+  @media (max-width: 991px) {
+    .navbar {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+  
+  .navContent {
+    align-self: stretch;
+    display: flex;
+    min-width: 240px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-basis: 0%;
+    margin: auto 0;
+    padding: 0 30px;
+  }
+  
+  @media (max-width: 991px) {
+    .navContent {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+  
+  .navLeft {
+    align-self: stretch;
+    display: flex;
+    min-width: 240px;
+    align-items: center;
+    gap: 40px 120px;
+    color: #fff;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-basis: 0%;
+    margin: auto 0;
+  }
+  
+  @media (max-width: 991px) {
+    .navLeft {
+      max-width: 100%;
+    }
+  }
+  
+  .logo {
+    text-align: center;
+    align-self: stretch;
+    margin: auto 0;
+    font: 400 25px Lilita One, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  .navLinks {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-start;
+    width: 70px;
+    margin: auto 0;
+    font: 500 18px Poppins, sans-serif;
+  }
+  
+  .navRight {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    color: #000;
+    text-align: center;
+    justify-content: flex-end;
+    width: 82px;
+    margin: auto 0;
+    font: 600 18px Poppins, sans-serif;
+  }
+  
+  .signInButton {
+    align-self: stretch;
+    border-radius: 12px;
+    background-color: #cebbfa;
+    gap: 10px;
+    margin: auto 0;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signInButton:hover {
+    background-color: #bda8f8;
+  }
+  
+  .signInButton:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }

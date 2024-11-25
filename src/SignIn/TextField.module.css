@@ -1,0 +1,29 @@
+.textFieldWrapper {
+    display: flex;
+    width: 100%;
+    /* max-width: 620px; */
+    flex-direction: column;
+    margin: 15px 0;
+  }
+   
+  .label {
+    font: 500 18px Poppins, sans-serif;
+    color: #000;
+    margin-bottom: 5px;
+  }
+  
+  .input {
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background: #fff;
+    padding: 10px;
+    font: 300 17px Poppins, sans-serif;
+    color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+  }
+  
+  @media (max-width: 991px) {
+    .textFieldWrapper {
+      max-width: 100%;
+    }
+  }

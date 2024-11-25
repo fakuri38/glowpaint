@@ -1,0 +1,107 @@
+.header {
+  background-color: #6D588B;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo {
+  color: #FFFFFF;
+  font-family: 'Lilita One';
+  font-size: 25px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+}
+
+.navLink {
+  color: #FFFFFF;
+  font-family: 'Poppins';
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.navLink:hover {
+  opacity: 0.8;
+}
+
+.navigation .navLink {
+  text-decoration: none;
+}
+
+.authContainer {
+  display: flex;
+  gap: 16px;
+}
+
+.signInButton {
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  color: #000000;
+  font-family: 'Poppins';
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.adminButton {
+  background-color: #CEBBFA;
+  border: none;
+  border-radius: 12px;
+  color: #000000;
+  font-family: 'Poppins';
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.signInButton:hover,
+.adminButton:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
+  .logoContainer {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .navigation {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .authContainer {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}

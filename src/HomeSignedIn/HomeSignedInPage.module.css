@@ -1,0 +1,22 @@
+/* .mainContent {
+    background-color: rgba(217, 217, 217, 0.65);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  } */
+
+
+  .event {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgba(217, 217, 217, 0.65);
+    overflow-x: hidden;
+  }
+  
+  .mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }

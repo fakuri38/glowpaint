@@ -1,0 +1,105 @@
+html, body {
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #fff; /* Set a default white background */
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  .infoSection {
+    background-color: #fff;
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    overflow: hidden;
+    color: #000;
+    justify-content: flex-start; /* Ensures content aligns at the top */
+    padding: 40px 70px;
+    font: 20px Poppins, sans-serif;
+    margin-left: -15px;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+  
+  @media (max-width: 991px) {
+    .infoSection {
+      max-width: 100%;
+      padding: 20px 20px;
+      margin-left: 0;
+    }
+  }
+  
+  .infoContent {
+    display: flex;
+    width: 100%;
+    padding-left: 0px;
+    align-items: center;
+    gap: 40px 110px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 991px) {
+    .infoContent {
+      max-width: 100%;
+      gap: 20px;
+      padding-left: 0 20px;
+    }
+  }
+  
+  .infoImage {
+    aspect-ratio: 1;
+    object-fit: contain;
+    width: 240px;
+    align-self: stretch;
+    min-width: 240px;
+    flex-grow: 1;
+    align-self: stretch;
+  }
+
+  .infoText {
+    background-color: #fff;
+    align-self: stretch;
+    display: flex;
+    min-width: 240px;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+    width: 802px;
+  }
+  
+  @media (max-width: 991px) {
+    .infoText {
+      max-width: 100%;
+    }
+  }
+  
+  .infoTitle {
+    align-self: flex-start;
+    font-weight: 700;
+    padding: 10px;
+    margin-top: 90px;
+  }
+
+  @media (max-width: 991px) {
+    .infoTitle {
+      font-size: 20px; /* Smaller font size for smaller devices */
+    }
+  }
+  
+  .infoDescription {
+    align-self: stretch;
+    margin-top: 8px;
+    width: 100%;
+    font-weight: 400;
+    padding: 10px;
+  }
+  
+  @media (max-width: 991px) {
+    .infoDescription {
+      max-width: 100%;
+      font-size: 16px; /* Smaller font size for mobile */
+    }
+  }

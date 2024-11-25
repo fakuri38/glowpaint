@@ -1,0 +1,99 @@
+.searchContainer {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    margin-top: 20px;
+  }
+  
+  .searchWrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .title {
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 0;
+  }
+  
+  .searchBox {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #a6acaf;
+    border-radius: 36px;
+    padding: 12px 24px;
+    gap: 12px;
+    min-width: 300px;
+  }
+  
+  .searchInput {
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #000000;
+    width: 100%;
+    background: transparent;
+  }
+  
+  .searchInput::placeholder {
+    color: #a6acaf;
+  }
+  
+  .searchIcon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .printButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #00bfff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .printButton:hover {
+    background-color: #00a6e6;
+  }
+  
+  .printButton:focus {
+    outline: 2px solid #00bfff;
+    outline-offset: 2px;
+  }
+  
+  .printIcon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  @media (max-width: 768px) {
+    .searchContainer {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .searchWrapper {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .searchBox {
+      width: 100%;
+    }
+  }

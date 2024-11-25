@@ -1,0 +1,37 @@
+.signInPage {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .mainContent {
+    background-color: rgba(217, 217, 217, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 86px 50px;
+  }
+  
+  .imageWrapper {
+    flex: 1;
+    max-width: 512px;
+    margin: 0 auto;
+  }
+  
+  .eventImage {
+    aspect-ratio: 1.75;
+    object-fit: contain;
+    width: 100%;
+  }
+  
+  @media (max-width: 991px) {
+    .mainContent {
+      padding: 40px 20px;
+    }
+  
+    .imageWrapper {
+      max-width: 100%;
+    }
+  }

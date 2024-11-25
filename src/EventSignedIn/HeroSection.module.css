@@ -1,0 +1,177 @@
+/* Reset margin and padding for the body and html */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #d9d9d9; 
+}
+
+.heroSection {
+  background-color: #d9d9d9;
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: -10px; /*remove excess spaces*/
+  box-sizing: border-box;
+}
+
+@media (max-width: 991px) {
+  .heroSection {
+    /* max-width: 100%; */
+    padding: 0 20px;
+    margin: 0;
+  }
+}
+
+.heroContent {
+  display: flex;
+  width: 100%;
+  max-width: 1217px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 30px;
+  /* margin-top: -20px; */
+}
+
+@media (max-width: 991px) {
+  .heroContent {
+    max-width: 100%;
+    padding: 0 15px; /* Adjust padding for smaller screens */
+  }
+}
+
+.heroWrapper {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 40px 243px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .heroWrapper {
+    max-width: 100%;
+    gap: 20px 0; /* Reduced gap for mobile */
+    margin-left: 80px;
+  }
+}
+
+.heroLeft {
+  align-self: stretch;
+  display: flex;
+  min-width: 240px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  width: 284px;
+  margin-top: 70px;
+}
+
+@media (max-width: 991px) {
+  .heroLeft {
+      width: 100%;
+      margin-top: 40px;
+      margin-left: 120px;
+      align-items: center; /* Center content on smaller screens */
+  }
+}
+
+.heroImage {
+  display: flex;
+  max-width: 100%;
+  width: 355px;
+  flex-direction: column;
+}
+
+.heroImageContent {
+  aspect-ratio: 1.12;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+}
+
+.registerButton {
+  align-self: stretch;
+  border-radius: 15px;
+  background-color: #fcc368;
+  margin-top: 57px;
+  min-height: 55px;
+  width: 200px;
+  max-width: 100%;
+  gap: 10px;
+  color: #000;
+  text-align: center;
+  padding: 13px 10px;
+  font: 700 20px Poppins;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 40px;
+}
+
+.registerButton:hover {
+  background-color: #fbb446;
+}
+
+.registerButton:focus {
+  outline: 2px solid #6d588b;
+  outline-offset: 2px;
+}
+
+@media (max-width: 991px) {
+  .registerButton {
+    margin-top: 40px;
+    margin-left: 130px; 
+    /* Remove left margin on small screens */
+    /* align-items: center; */
+    justify-content: center;
+  }
+}
+
+.registrationClosed {
+  align-self: stretch;
+  margin-top: 70px;
+  margin-left: -80px;
+  gap: 10px;
+  color: #1d064a;
+  text-align: center;
+  padding: 10px;
+  font: 600 18px Poppins;
+}
+
+@media (max-width: 991px) {
+  .registrationClosed {
+    margin-top: 40px;
+    margin-left: 0; /* Reset left margin on small screens */
+  }
+}
+
+.heroRightImage {
+  aspect-ratio: 1.03;
+  object-fit: contain;
+  object-position: center;
+  width: 542px;
+  border-radius: 80px;
+  align-self: stretch;
+  min-width: 240px;
+  flex-grow: 1;
+  margin: auto 0;
+}
+
+@media (max-width: 991px) {
+  .heroRightImage {
+    max-width: 100%;
+    /* align-items: center; */
+    /* justify-content: center; */
+    margin: 20px 0; /* Add margin to top and bottom on smaller screens */
+    margin-left: 150px;
+  }
+}

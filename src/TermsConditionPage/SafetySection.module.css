@@ -1,0 +1,61 @@
+.safetySection {
+    padding: 3.125rem 0;
+    background-color: #ffffff;
+  }
+  
+  .title {
+    color: #1D064A;
+    font-size: 2.1875rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 2rem;
+  }
+  
+  .content {
+    max-width: 68.875rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  
+  .rulesList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ruleItem {
+    color: #1D064A;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  .ruleItem::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1.875rem;
+    }
+  
+    .ruleItem {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .safetySection {
+      background-color: #1a1a1a;
+    }
+  
+    .title,
+    .ruleItem {
+      color: #ffffff;
+    }
+  }

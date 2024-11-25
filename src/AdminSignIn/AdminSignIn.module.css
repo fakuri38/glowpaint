@@ -1,0 +1,104 @@
+.adminSignIn {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: Poppins, sans-serif;
+  }
+  
+  .authContainer {
+    background: #f0f0f0;
+    display: flex;
+    min-height: 737px;
+    width: 100%;
+    align-items: center;
+    gap: 40px 136px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .brandLogo {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 450px;
+    align-self: stretch;
+    min-width: 240px;
+    margin: auto 0;
+  }
+  
+  .formContainer {
+    border-radius: 20px;
+    background: #fff;
+    align-self: stretch;
+    display: flex;
+    min-width: 240px;
+    min-height: 471px;
+    flex-direction: column;
+    overflow: hidden;
+    width: 500px;
+    margin: auto 0;
+    padding: 11px 39px 4px;
+  }
+  
+  .formHeader {
+    display: flex;
+    width: 260px;
+    max-width: 100%;
+    padding-top: 20px;
+    flex-direction: column;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .welcomeText {
+    font-size: 18px;
+    padding: 10px;
+    font-weight: 500;
+  }
+  
+  .signInTitle {
+    font-size: 38px;
+    padding: 10px;
+    font-weight: 500;
+  }
+  
+  .signInForm {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .signInButton {
+    margin-top: 30px;
+    border-radius: 10px;
+    background: #6d588b;
+    width: 100%;
+    padding: 10px 50px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 991px) {
+    .authContainer {
+      max-width: 100%;
+    }
+  
+    .brandLogo {
+      max-width: 100%;
+    }
+  
+    .formContainer {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  
+    .signInButton {
+      max-width: 100%;
+      padding: 10px 20px;
+    }
+  }

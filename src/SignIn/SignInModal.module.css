@@ -1,0 +1,188 @@
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Adjusted transparency */
+  z-index: 9999; /* Above other elements */
+}
+
+/* Modal Container */
+.registrationModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff; /* Bright white for clarity */
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px; /* Limits width on larger screens */
+  z-index: 10000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out; /* Optional fade-in effect */
+}
+
+/* Close Button */
+.closeButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f3f3;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.closeButton:hover {
+  background: #e0e0e0;
+}
+
+.closeButton:focus {
+  outline: 2px solid #6d588b; /* Accessible focus state */
+}
+
+/* Modal Header */
+.modalHeader {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center; /* Center-align header content */
+}
+
+.registrationTitle {
+  font: 700 28px "Poppins", sans-serif;
+  color: #6d588b;
+  margin: 0;
+}
+
+.welcomeText {
+  font: 500 20px "Poppins", sans-serif;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+/* Progress Bar Section */
+.progressBar {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.progressImage {
+  width: 100%;
+  max-width: 544px;
+}
+
+/* Button Styles */
+.nextButton {
+  width: 100%;
+  border-radius: 10px;
+  background: #6d588b;
+  color: #ffffff;
+  font: 700 18px "Poppins", sans-serif;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.nextButton:hover {
+  background: #5a4676;
+}
+
+.nextButton:focus {
+  outline: 2px solid #5a4676;
+}
+
+/* Registration Types */
+.registrationTypes {
+  display: flex;
+  justify-content: space-between;
+  font: 500 16px "Poppins", sans-serif;
+  margin: 20px 0;
+}
+
+.typeButton {
+  flex: 1;
+  background: none;
+  border: none;
+  font: inherit;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align: center;
+  transition: color 0.2s ease-in-out;
+}
+
+.typeButton:hover {
+  color: #6d588b;
+}
+
+.typeButton.active {
+  color: #6d588b;
+  border-bottom: 2px solid #6d588b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .registrationModal {
+      padding: 20px;
+      width: 95%;
+  }
+
+  .nextButton {
+      padding: 15px;
+  }
+
+  .registrationTitle {
+      font-size: 24px;
+  }
+
+  .welcomeText {
+      font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .progressImage {
+      max-width: 100%;
+      height: auto;
+  }
+
+  .typeButton {
+      padding: 10px;
+      font-size: 14px;
+  }
+
+  .nextButton {
+      font-size: 16px;
+      padding: 12px;
+  }
+
+  .registrationTitle {
+      font-size: 20px;
+  }
+
+  .welcomeText {
+      font-size: 16px;
+  }
+}
+
+/* Animation (Optional) */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}

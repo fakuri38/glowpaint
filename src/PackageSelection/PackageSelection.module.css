@@ -1,0 +1,194 @@
+.packageSelection {
+    position: relative; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, 0); 
+    background-color: white; 
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; 
+    max-width: 600px; 
+    z-index: 10000; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .modalHeader {
+    position: relative;
+    width: 100%;
+  }
+  
+  .closeButton {
+    border-radius: 8px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .closeIcon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .headerContent {
+    text-align: center;
+  }
+  
+  .welcomeText {
+    color: #000;
+    font: 500 24px Poppins, sans-serif;
+    padding: 50px 10px 0;
+    margin: 0;
+  }
+  
+  .selectionTitle {
+    color: #6d588b;
+    font: 700 38px Poppins, sans-serif;
+    margin: 5px 0;
+  }
+  
+  .progressBar {
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+  }
+  
+  .progressImage {
+    width: 544px;
+    min-width: 240px;
+  }
+  
+  .content {
+    margin-top: 10px;
+    width: 100%;
+    font-family: Poppins, sans-serif;
+  }
+  
+  .bannerContainer {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  .bannerImage {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .packagesGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 50px;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  
+  .packageCard {
+    background: #d9d9d9;
+    border-radius: 10px;
+    width: 250px;
+    min-height: 250px;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .packageTitle {
+    font: 700 16px Poppins, sans-serif;
+    margin: 0;
+  }
+  
+  .featuresList {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    font: 400 14px Poppins, sans-serif;
+  }
+  
+  .featureItem {
+    margin: 5px 0;
+  }
+  
+  .packagePrice {
+    font: 600 14px Poppins, sans-serif;
+    margin: 10px 0 0;
+  }
+  
+  .selectionForm {
+    max-width: 640px;
+    margin: 20px auto;
+  }
+  
+  .formField {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+  }
+  
+  .fieldLabel {
+    font: 500 18px Poppins, sans-serif;
+    color: #000;
+  }
+  
+  .selectWrapper {
+    flex: 1;
+    position: relative;
+  }
+  
+  .packageSelect {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    font: 300 17px Poppins, sans-serif;
+    appearance: none;
+    background: #fff url('https://cdn.builder.io/api/v1/image/assets/fb2c95ce6a8d473e94eb0b0c97b334f0/bb9f6fed367b4d2f4e6a1aec31599f41e1a2e9704bb3a314f9e5ad6d74df8bc6?apiKey=fb2c95ce6a8d473e94eb0b0c97b334f0&') no-repeat right 10px center;
+    background-size: 16px;
+  }
+  
+  .priceDisplay {
+    padding: 10px;
+    font: 300 17px Poppins, sans-serif;
+  }
+  
+  .modalFooter {
+    padding: 0 10px 20px;
+  }
+  
+  .nextButton {
+    width: 100%;
+    min-height: 70px;
+    border-radius: 10px;
+    background: #6d588b;
+    color: #fff;
+    font: 700 20px Poppins, sans-serif;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 991px) {
+    .packageSelection {
+      padding: 0 20px;
+    }
+  
+    .modalHeader,
+    .content,
+    .modalFooter {
+      max-width: 100%;
+    }
+  
+    .nextButton {
+      padding: 0 20px;
+    }
+  }

@@ -1,0 +1,102 @@
+.footer {
+    background-color: #6d588b;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    padding: 65px 0 65px 100px;
+  }
+  
+  .footerContent {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: 40px 349px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .footerLinks {
+    display: flex;
+    min-width: 240px;
+    align-items: flex-start;
+    gap: 40px 75px;
+    color: #fff;
+    justify-content: flex-start;
+  }
+
+  .footerLinks a {
+    text-decoration: none;
+    color: inherit; /* Ensures link color matches the styling set in .navLinks */
+  }
+  
+  .footerLogo {
+    text-align: center;
+    font: 400 25px Lilita One, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  .footerNavLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 82px;
+    font: 500 18px Poppins, sans-serif;
+  }
+  
+  .aboutUs {
+    margin-top: 37px;
+  }
+  
+  .socialLinks {
+    display: flex;
+    min-width: 240px;
+    align-items: flex-end;
+    gap: 21px;
+    justify-content: flex-start;
+    flex-grow: 1;
+    width: 322px;
+  }
+  
+  .socialIcons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 24px;
+  }
+  
+  .socialIcon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 24px;
+  }
+  
+  .socialIcon + .socialIcon {
+    margin-top: 20px;
+  }
+  
+  .contactInfo {
+    display: flex;
+    min-width: 240px;
+    flex-direction: column;
+    color: #fff;
+    justify-content: flex-start;
+    width: 345px;
+    font: 500 15px Poppins, sans-serif;
+  }
+  
+  .contactInfo > * + * {
+    margin-top: 24px;
+  }
+  
+  @media (max-width: 991px) {
+    .footer {
+      max-width: 100%;
+      padding-left: 20px;
+    }
+  
+    .footerContent {
+      max-width: 100%;
+    }
+  }

@@ -1,0 +1,95 @@
+.signInFormContainer {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .formWrapper {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .welcomeText {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .signInTitle {
+    font-size: 38px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .inputGroup {
+    margin-bottom: 20px;
+  }
+  
+  .inputLabel {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    font-size: 17px;
+  }
+  
+  .forgotPassword {
+    display: block;
+    text-align: right;
+    color: #6d588b;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-decoration: none;
+  }
+  
+  .signInButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #6d588b;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  
+  .signUpPrompt {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .orText {
+    display: block;
+    color: #6d588b;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .noAccountText {
+    font-size: 15px;
+  }
+  
+  .signUpLink {
+    color: #7c678f;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 991px) {
+    .signInFormContainer {
+      max-width: 100%;
+    }
+  
+    .formWrapper {
+      padding: 20px;
+    }
+  }
