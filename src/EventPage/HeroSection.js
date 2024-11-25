@@ -1,43 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import styles from './HeroSection.module.css';
-import { RegistrationForm } from '../RegistrationForm/RegistrationForm';
-import { PackageSelection } from '../PackageSelection/PackageSelection';
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import styles from "./HeroSection.module.css";
+import { RegistrationForm } from "../RegistrationForm/RegistrationForm";
 
 function HeroSection() {
   const location = useLocation();
-  const [isModalOpen, setModalOpen] = useState(false); // Manage modal visibility
-  const [currentStep, setCurrentStep] = useState('registration'); // Manage steps
+  const [isModalOpen, setModalOpen] = useState(false);
 
-  // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  // Open the modal
-  const openModal = () => {
-    setModalOpen(true);
-    setCurrentStep('registration'); // Start with the first step
-  };
-
-  // Close the modal
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-  // Go to the next step
-  const goToNextStep = () => {
-    if (currentStep === 'registration') {
-      setCurrentStep('packages'); // Move to Package Selection
-    }
-  };
-
-  // Go to the previous step (if needed)
-  const goToPreviousStep = () => {
-    if (currentStep === 'packages') {
-      setCurrentStep('registration'); // Go back to Registration
-    }
-  };
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
 
   return (
     <section className={styles.heroSection}>
@@ -53,7 +28,7 @@ function HeroSection() {
             </div>
             <button
               className={styles.registerButton}
-              onClick={openModal} // Open modal
+              onClick={openModal}
             >
               Register Now!
             </button>
@@ -69,23 +44,7 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* Modal Implementation */}
-      {isModalOpen && (
-        <div className={styles.modalOverlay}>
-          {currentStep === 'registration' && (
-            <RegistrationForm
-              onNext={goToNextStep} // Navigate to next step
-              onClose={closeModal} // Close the modal
-            />
-          )}
-          {currentStep === 'packages' && (
-            <PackageSelection
-              onClose={closeModal} // Close the modal
-              onBack={goToPreviousStep} // Optional: Navigate back
-            />
-          )}
-        </div>
-      )}
+      <RegistrationForm open={isModalOpen} onClose={closeModal} />
     </section>
   );
 }

@@ -1,77 +1,258 @@
-import React from 'react';
-import TextField from './TextField';
-import PasswordField from './PasswordField';
-import styles from './RegistrationForm.module.css';
+import React, { useState } from "react";
+import {
+  Box,
+  Button,
+  Modal,
+  Step,
+  StepLabel,
+  Stepper,
+  TextField,
+} from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import styles from "./RegistrationForm.module.css";
 
-export const RegistrationForm = ({ onNext, onClose }) => {
-  return (
-    <>
-      {/* Overlay to block background */}
-      <div className={styles.overlay}></div>
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#6d588b", 
+    },
+    secondary: {
+      main: "#ffffff", 
+    },
+  },
+});
 
-      <main className={styles.registrationModal}>
-        <header className={styles.modalHeader}>
-          <button className={styles.closeButton} aria-label="Close registration form">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/fb2c95ce6a8d473e94eb0b0c97b334f0/f9c1e4fb612255943eac4158feb6ec4bd22fb1491781e95cc8a7cef092677e64?apiKey=fb2c95ce6a8d473e94eb0b0c97b334f0&"
-              className={styles.closeIcon}
-              alt=""
+
+const steps = ["Account Info", "Package Details", "Confirmation"];
+
+export const RegistrationForm = ({ open, onClose }) => {
+  const [activeStep, setActiveStep] = useState(0);
+  const [registrationType, setRegistrationType] = useState("Public");
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleClose = () => {
+    setActiveStep(0);
+    onClose();
+  };
+
+  const handleRegistrationTypeChange = (type) => {
+    setRegistrationType(type);
+  };
+
+  const renderStepContent = (step) => {
+    switch (step) {
+      case 0: // Account Info
+        return (
+          <Box>
+            <TextField
+              fullWidth
+              label="Full Name"
+              placeholder="Full name as per IC/Passport"
+              margin="normal"
             />
-          </button>
-          <section className={styles.headerContent}>
-            <h1 className={styles.welcomeText}>Welcome to GlowPaintRun</h1>
-            <h2 className={styles.registrationTitle}>Registration</h2>
-            <nav className={styles.progressBar}>
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/fb2c95ce6a8d473e94eb0b0c97b334f0/51f956471fda331501d7f6fa46ecd88f763cbf04231caafe6bf96e0cbac41199?apiKey=fb2c95ce6a8d473e94eb0b0c97b334f0&"
-                className={styles.progressImage}
-                alt="Registration progress"
+            <TextField
+              fullWidth
+              label="Email Address"
+              placeholder="Enter your email"
+              margin="normal"
+            />
+            <TextField
+              fullWidth
+              label="Password"
+              placeholder="8 - 12 characters"
+              margin="normal"
+              type="password"
+            />
+            <TextField
+              fullWidth
+              label="Confirm Password"
+              placeholder="Retype your password"
+              margin="normal"
+              type="password"
+            />
+                        {registrationType === "USM Student" ? (
+              <>
+                <TextField
+                  fullWidth
+                  label="USM Student ID"
+                  placeholder="Enter your student ID"
+                  margin="normal"
+                />
+                <TextField
+                  fullWidth
+                  label="Faculty"
+                  placeholder="Enter your faculty"
+                  margin="normal"
+                />
+              </>
+            ) : (
+              <TextField
+                fullWidth
+                label="Phone Number"
+                placeholder="Enter your phone number"
+                margin="normal"
               />
-            </nav>
-          </section>
-          <nav className={styles.registrationTypes}>
-            <button className={styles.typeButton}>USM Student</button>
-            <button className={`${styles.typeButton} ${styles.active}`}>Public</button>
-          </nav>
-        </header>
+            )}
+          </Box>
+        );
+      case 1: 
+        return (
+          <Box>
+            <TextField
+              fullWidth
+              label="Full Name"
+              placeholder="Full name as per IC/Passport"
+              margin="normal"
+            />
+            {registrationType === "USM Student" ? (
+              <>
+                <TextField
+                  fullWidth
+                  label="USM Student ID"
+                  placeholder="Enter your student ID"
+                  margin="normal"
+                />
+                <TextField
+                  fullWidth
+                  label="Faculty"
+                  placeholder="Enter your faculty"
+                  margin="normal"
+                />
+              </>
+            ) : (
+              <TextField
+                fullWidth
+                label="Phone Number"
+                placeholder="Enter your phone number"
+                margin="normal"
+              />
+            )}
+          </Box>
+        );
+      case 2: // Confirmation
+        return <p>Review your details and submit to complete registration.</p>;
+      default:
+        return <p>Unknown step</p>;
+    }
+  };
+  
 
-        <form className={styles.formContent}>
-          <TextField
-            label="Email Address"
-            placeholder="Email address"
-            type="email"
-            id="email"
-          />
-          <TextField
-            label="Full Name"
-            placeholder="Full name as per IC/Passport"
-            id="fullName"
-          />
-          <PasswordField
-            label="Password"
-            placeholder="8 - 12 characters password"
-            id="password"
-          />
-          <PasswordField
-            label="Confirm Password"
-            placeholder="Retype your password"
-            id="confirmPassword"
-          />
-        </form>
+  return (
+    <ThemeProvider theme={theme}>
+      <Modal open={open} onClose={handleClose}>
+        <Box className={styles.modalContent}>
+          <h2 className={styles.modalTitle}>Registration</h2>
 
-        <footer className={styles.modalFooter}>
-          <button className={styles.nextButton} onClick={onNext}>Next</button>
-          <div className={styles.signInSection}>
-            <p className={styles.orText}>or</p>
-            <p className={styles.signInText}>
-              Have an account?{" "}
-              <a href="#" className={styles.signInLink}>Sign In</a>
-            </p>
-          </div>
-        </footer>
-      </main>
-    </>
+          {/* Stepper */}
+          <Stepper
+            activeStep={activeStep}
+            alternativeLabel
+            sx={{
+              "& .MuiStepIcon-root": {
+                color: "#d3c3e0", 
+              },
+              "& .MuiStepIcon-text": {
+                fill: "#ffffff", 
+              },
+              "& .MuiStepIcon-active": {
+                color: "#6d588b", 
+              },
+              "& .MuiStepIcon-completed": {
+                color: "#6d588b", 
+              },
+            }}
+          >
+            {steps.map((label) => (
+              <Step key={label}>
+                <StepLabel
+                  sx={{
+                    "& .MuiStepLabel-label": {
+                      color: activeStep === steps.indexOf(label) ? "#6d588b" : "#6d588b80", 
+                    },
+                  }}
+                >
+                  {label}
+                </StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+
+          {/* Toggle Registration Type */}
+          <Box className={styles.toggleButtons}>
+            <Button
+              variant={registrationType === "USM Student" ? "contained" : "outlined"}
+              onClick={() => handleRegistrationTypeChange("USM Student")}
+              sx={{
+                color: registrationType === "USM Student" ? "#ffffff" : "#6d588b",
+                backgroundColor: registrationType === "USM Student" ? "#6d588b" : "transparent",
+                borderColor: "#6d588b",
+                "&:hover": {
+                  backgroundColor: registrationType === "USM Student" ? "#5a4676" : "#e0e0e0",
+                },
+              }}
+            >
+              USM Student
+            </Button>
+            <Button
+              variant={registrationType === "Public" ? "contained" : "outlined"}
+              onClick={() => handleRegistrationTypeChange("Public")}
+              sx={{
+                color: registrationType === "Public" ? "#ffffff" : "#6d588b",
+                backgroundColor: registrationType === "Public" ? "#6d588b" : "transparent",
+                borderColor: "#6d588b",
+                "&:hover": {
+                  backgroundColor: registrationType === "Public" ? "#5a4676" : "#e0e0e0",
+                },
+              }}
+            >
+              Public
+            </Button>
+          </Box>
+
+          {/* Step Content */}
+          <Box className={styles.stepContent}>
+            {renderStepContent(activeStep)}
+          </Box>
+
+          {/* Stepper Actions */}
+          <Box className={styles.modalActions}>
+            <Button
+              variant="outlined"
+              disabled={activeStep === 0}
+              onClick={handleBack}
+              sx={{
+                color: "#6d588b",
+                borderColor: "#6d588b",
+                "&:hover": {
+                  backgroundColor: "#f3eafc",
+                },
+              }}
+            >
+              Back
+            </Button>
+            {activeStep === steps.length - 1 ? (
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleClose}
+              >
+                Finish
+              </Button>
+            ) : (
+              <Button variant="contained" color="primary" onClick={handleNext}>
+                Next
+              </Button>
+            )}
+          </Box>
+        </Box>
+      </Modal>
+    </ThemeProvider>
   );
 };

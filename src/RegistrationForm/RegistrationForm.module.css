@@ -1,200 +1,63 @@
-/* Modal Overlay */
-.modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 5.0); /* Semi-transparent black background */
-    z-index: 9999; /* Ensure it's above all other elements */
-  }
+.modalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+}
 
-  .registrationModal {
-    position: fixed; /* Fix it relative to the viewport */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center the modal perfectly */
-    background-color: white; /* White background */
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%; /* Optional, for responsiveness */
-    max-width: 600px; /* Optional, for responsiveness */
-    z-index: 10000; /* Ensure the modal appears on top of everything */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional, adds shadow for a floating effect */
-  }
-  
-  .modalHeader {
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .closeButton {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f3f3f3;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s ease-in-out;
-  }
-  
-  .closeButton:hover {
-    background: #e0e0e0;
-  }
-  
-  .closeIcon {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .headerContent {
-    text-align: center;
-  }
-  
-  .welcomeText {
-    font: 500 20px "Poppins", sans-serif;
-    color: #333333;
-    margin-bottom: 10px;
-  }
-  
-  .registrationTitle {
-    font: 700 28px "Poppins", sans-serif;
-    color: #6d588b;
-    margin: 0;
-  }
-  
-  .progressBar {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-  }
-  
-  .progressImage {
-    width: 100%;
-    max-width: 544px;
-  }
-  
-  .registrationTypes {
-    display: flex;
-    justify-content: space-between;
-    font: 500 16px "Poppins", sans-serif;
-    margin: 20px 0;
-  }
-  
-  .typeButton {
-    flex: 1;
-    background: none;
-    border: none;
-    font: inherit;
-    color: rgba(0, 0, 0, 0.6);
-    cursor: pointer;
-    padding: 10px 20px;
-    text-align: center;
-    transition: color 0.2s ease-in-out;
-  }
-  
-  .typeButton:hover {
-    color: #6d588b;
-  }
-  
-  .typeButton.active {
-    color: #6d588b;
-    border-bottom: 2px solid #6d588b;
-  }
-  
-  .formContent {
-    padding: 10px 0;
-  }
-  
-  .modalFooter {
-    padding: 20px 0;
-  }
-  
-  .nextButton {
-    width: 100%;
-    border-radius: 10px;
-    background: #6d588b;
-    color: #ffffff;
-    font: 700 18px "Poppins", sans-serif;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-  }
-  
-  .nextButton:hover {
-    background: #5a4676;
-  }
-  
-  .signInSection {
-    text-align: center;
-    margin-top: 20px;
-    font: 500 14px "Poppins", sans-serif;
-  }
-  
-  .orText {
-    color: #6d588b;
-    margin-bottom: 10px;
-  }
-  
-  .signInText {
-    margin-top: 10px;
-  }
-  
-  .signInLink {
-    color: #7c678f;
-    text-decoration: underline;
-    font-weight: 600;
-  }
-  
-  @media (max-width: 991px) {
-    .registrationModal {
-      padding: 20px;
-      width: 90%;
-    }
-  
-    .nextButton {
-      padding: 15px;
-    }
-  
-    .registrationTitle {
-      font-size: 24px;
-    }
-  
-    .welcomeText {
-      font-size: 18px;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .progressImage {
-      max-width: 100%;
-      height: auto;
-    }
-  
-    .typeButton {
-      padding: 10px;
-      font-size: 14px;
-    }
-  
-    .nextButton {
-      font-size: 16px;
-      padding: 12px;
-    }
-  
-    .registrationTitle {
-      font-size: 20px;
-    }
-  
-    .welcomeText {
-      font-size: 16px;
-    }
-  }
-  
+.modalTitle {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #6d588b;
+}
+
+.stepContent {
+  margin: 20px 0;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.nextButton {
+  background-color: #6d588b;
+  color: white;
+}
+
+.nextButton:hover {
+  background-color: #5a4676;
+}
+
+.backButton {
+  color: #6d588b;
+  border-color: #6d588b;
+}
+
+.toggleButtons {
+  display: flex;
+  justify-content: center; /* Centers the buttons horizontally */
+  gap: 10px; /* Adds space between the buttons */
+  margin: 20px 0; /* Adds space above and below the buttons */
+}
+
+.toggleButton {
+  flex: 1;
+  margin: 0 5px;
+}
+
+.toggleButton:first-of-type {
+  margin-left: 0;
+}
+
+.toggleButton:last-of-type {
+  margin-right: 0;
+}
