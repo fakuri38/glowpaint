@@ -1,0 +1,46 @@
+.sizingSection {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 40px 256px;
+    color: #1d064a;
+    text-align: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 62px 252px;
+    font: 600 45px Poppins, sans-serif;
+    background-color: white;
+  }
+  
+  .sizingImage {
+    aspect-ratio: 1.03;
+    object-fit: contain;
+    width: 381px;
+    border-radius: 10px;
+    align-self: stretch;
+    min-width: 240px;
+  }
+  
+  .sizingTitle {
+    /* flex-grow: 1; */
+    font: 600 40px Poppins;
+    width: 151px;
+    /* margin-right: 20px; */
+    margin-left: 110px;
+  }
+  
+  @media (max-width: 991px) {
+    .sizingSection {
+      max-width: 100%;
+      font-size: 40px;
+      padding: 0 20px;
+    }
+  
+    .sizingImage {
+      max-width: 100%;
+    }
+  
+    .sizingTitle {
+      font-size: 40px;
+    }
+  }

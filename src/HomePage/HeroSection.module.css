@@ -1,0 +1,196 @@
+html, body {
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #fff; /* Set a default white background */
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+.mainContent {
+    background-color: rgba(217, 217, 217, 0.65);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 24px;
+    box-sizing: border-box;
+    /* margin-right: 2050px; */
+    /* margin-left: 1000px; */
+    /*height: calc(100vh - 60px);*/ /* Full viewport height minus header height*/
+    /* box-sizing: border-box;  */
+    /* padding: 50px; */
+  }
+  
+  @media (max-width: 991px) {
+    .mainContent {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+  
+  .heroSection {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    margin-bottom: 92px;
+  }
+  
+  @media (max-width: 991px) {
+    .heroSection {
+      max-width: 100%;
+      flex-direction: column-reverse;
+       /* Stack content with image below text */
+      /* margin: 40px 0 60px; */
+    }
+  }
+  
+  .heroContent {
+    position: relative;
+    display: flex;
+    min-width: 240px;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 991px) {
+    .heroContent {
+      max-width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  .heroText {
+    z-index: 1;
+    display: flex;
+    min-height: 299px;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+  }
+  
+  @media (max-width: 991px) {
+    .heroText {
+      max-width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  .heroTitle {
+    flex: 1;
+    font: 400 80px Lilita One;
+    background: linear-gradient(180deg, #5C4883, #6D588B, #BBA2B0);
+    background-clip: text;
+    -webkit-background-clip: text; /* For Chrome, Safari, and Opera */
+    -webkit-text-fill-color: transparent; /* Ensures gradient shows through */
+    font-weight: 700;
+    margin-left: 120px;
+    /* text-align: center; */
+    margin-top: -10px;
+  }
+  
+  @media (max-width: 991px) {
+    .heroTitle {
+      max-width: 100%;
+      font-size: 40px;
+    }
+  }
+  
+  .heroDescription {
+    color: #000;
+    margin-top: 24px;
+    font: 500 18px Poppins;
+    font-weight: 550;
+    margin-left: 85px;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 991px) {
+    .heroDescription {
+      max-width: 100%;
+      font-size: 16px;
+    }
+  }
+  
+  .registerButton {
+    border-radius: 30px;
+    align-self: center;
+    z-index: 1;
+    display: flex;
+    margin-top: 60px;
+    width: 180px;
+    max-width: 100%;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+    font: 600 18px Poppins;
+    border: 2px solid #6d588b; /* Match border color to fill */
+  }
+  
+  .registerNow {
+    font: 600 18px Poppins;
+    border-radius: 30px;
+    width: 180px;
+    background-color: #6d588b;
+    color: white;
+    border: 2px solid #6d588b;
+    font-weight: 600;
+    padding: 10px 18px;
+    transition: all 0.3s ease; /* Optional: Adds smooth effect for hover */
+  }
+  
+  .registerNow:hover {
+    background-color: #5c4883; /* Slightly darker for hover effect */
+    border-color: #5c4883; /* Matches hover background */
+  }
+
+  @media (max-width: 991px) {
+    .registerNow {
+      padding: 8 16px;
+      font-size: 16px;
+    }
+  }
+  
+  .heroImage {
+    aspect-ratio: 1.49;
+    object-fit: contain;
+    width: 714px;
+    align-self: stretch;
+    min-width: 240px;
+  }
+  
+  @media (max-width: 991px) {
+    .heroImage {
+      max-width: 100%;
+    }
+  }
+
+  /* Extra small devices (phones) */
+@media (max-width: 576px) {
+    .heroTitle {
+      font-size: 32px;
+    }
+  
+    .heroDescription {
+      font-size: 14px;
+    }
+  
+    .registerNow {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  
+    .heroImage {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }

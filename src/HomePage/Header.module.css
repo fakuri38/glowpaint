@@ -1,0 +1,86 @@
+.header {
+    background-color: #6d588b;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 20px 24px;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Ensures items wrap when the screen size reduces */
+  }
+  
+  @media (max-width: 991px) {
+    .header {
+      max-width: 100%;
+      /* padding: 0 5px; */
+      padding: 10px 16px; /* Reduced padding for smaller screens */
+    }
+  }
+  
+  .headerContent {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    /* flex: 1; */
+    /* padding: 0 30px; */
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  }
+  
+  @media (max-width: 991px) {
+    .headerContent {
+      max-width: 100%;
+      /* padding: 0 20px; */
+      padding: 0 10px; /* Reduced padding for smaller screens */
+    }
+  }
+  
+  .navContainer {
+    display: flex;
+    align-items: center;
+    gap: 40px 120px;
+    color: #fff;
+    flex-wrap: wrap; /* Allows navigation links to wrap on smaller screens */
+    flex: 1;
+  }
+  
+  @media (max-width: 991px) {
+    .navContainer {
+      max-width: 100%;
+      justify-content: center; /* Centers navigation on smaller screens */
+    }
+  }
+  
+  .logo {
+    text-align: center;
+    font: 400 25px Lilita One;
+  }
+
+  .navLinks {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    font: 500 18px Poppins, sans-serif;
+  }
+  .navLinks a {
+    text-decoration: none;
+    color: inherit; /* Ensures link color matches the styling set in .navLinks */
+  } 
+  
+  .signInButton {
+    border-radius: 12px;
+    background-color: #cebbfa;
+    color: #000;
+    text-align: center;
+    /* padding: 10px; */
+    padding: 10px 16px; /* Adjust padding for better responsiveness */
+    font: 600 18px Poppins, sans-serif;
+    cursor: pointer; /* Adds a pointer cursor for better UX */
+  }
+
+  @media (max-width: 991px) {
+    .signInButton {
+      padding: 8px 12px; /* Reduced padding for smaller screens */
+      font-size: 14px; /* Smaller font size */
+    }
+  }
