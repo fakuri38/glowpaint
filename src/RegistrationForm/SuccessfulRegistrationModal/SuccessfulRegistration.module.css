@@ -1,0 +1,135 @@
+.mainContent {
+  margin-top: 10px;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 20px 10px;
+  font-family: Poppins, sans-serif;
+}
+
+.thankYouTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.approvalMessage {
+  font-weight: 600;
+  margin-top: 40px;
+}
+
+.contactInfo {
+  font-weight: 400;
+  margin-top: 40px;
+}
+
+/* .registrationModal {
+    position: relative;  
+    top: 50%;   
+    left: 50%; 
+    transform: translate(-50%, 0); 
+    background-color: white; 
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; 
+    max-width: 600px; 
+    z-index: 10000; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  } */
+  
+  /* @media (max-width: 991px) {
+    .registrationModal {
+      padding: 0 20px;
+    }
+  } */
+  
+  /* .modalHeader {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .closeButton {
+    border-radius: 8px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    width: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .closeIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  .headerContent {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .welcomeText {
+    color: #000;
+    font: 500 24px Poppins, sans-serif;
+    padding: 50px 10px 0;
+    margin: 0;
+  } */
+  
+  /* .completedText {
+    color: #6d588b;
+    font: 700 38px Poppins, sans-serif;
+    padding: 5px 10px;
+    margin: 0;
+  }
+  
+  .progressBar {
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+  }
+  
+  .progressImage {
+    width: 544px;
+    min-width: 240px;
+    object-fit: contain;
+  } */
+  
+
+  
+  /* .modalFooter {
+    margin-top: 10px;
+    padding: 0 10px 20px;
+  } */
+  
+  /* .doneButton {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #6d588b;
+    color: #fff;
+    font: 700 20px Poppins, sans-serif;
+    min-height: 70px;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+  }
+  
+  @media (max-width: 991px) {
+    .modalHeader,
+    .headerContent,
+    .completedText,
+    .progressBar,
+    .mainContent,
+    .approvalMessage,
+    .contactInfo,
+    .modalFooter,
+    .doneButton {
+      max-width: 100%;
+    }
+  } */

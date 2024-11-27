@@ -3,23 +3,29 @@
     width: 100%;
     /* max-width: 620px; */
     flex-direction: column;
-    margin: 15px 0;
+    margin: 15px 0; 
   }
-   
+  
   .label {
-    font: 500 18px Poppins, sans-serif;
-    color: #000;
+    font-family: Poppins, 'Bold';
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
     margin-bottom: 5px;
   }
   
-  .input {
+  .input { 
     border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.5);
     background: #fff;
     padding: 10px;
-    font: 300 17px Poppins, sans-serif;
-    color: rgba(0, 0, 0, 0.3);
-    width: 100%;
+    font: 400 17px Poppins;
+    color: rgb(0, 0, 0);
+  }
+
+  .input:active, .input:focus{
+    border: 2px solid #6D588B;
+    outline: none;
   }
   
   @media (max-width: 991px) {

@@ -11,7 +11,7 @@ export const ComponentHeader = () => {
         <Link to="/home-signed-in-page" className={styles.navLink}>Home</Link>
         <Link to="/event-signed-in-page" className={styles.navLink}>Event</Link>
         <Link to="/kit-page" className={styles.navLink}>Kit Collection</Link>
-          <a href="#cert" className={styles.navLink}>E-Cert</a>
+          <a href="/ecert" className={styles.navLink}>E-Cert</a>
         </nav>
       </div>
       <div className={styles.authContainer}>

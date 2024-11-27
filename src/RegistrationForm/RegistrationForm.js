@@ -1,58 +1,34 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  Modal,
-  Step,
-  StepLabel,
-  Stepper,
-  TextField,
-  Card,
-} from "@mui/material";
+import { Box, Button, Modal, Step, StepLabel, Stepper } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import styles from "./RegistrationForm.module.css";
+import { PublicRegistration } from "./ParticipantInformation/PublicRegistration";
+import { StudentRegistration } from "./ParticipantInformation/StudentRegistration";
+import { PackageSelection } from "./PackageSelection/PackageSelection";
+import { TransactionModal } from "./TransactionModal/TransactionModal";
+import { SuccessfulRegistration } from "./SuccessfulRegistrationModal/SuccessfulRegistration";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#6d588b", 
+      main: "#6d588b",
     },
     secondary: {
-      main: "#ffffff", 
+      main: "#ffffff",
     },
   },
 });
 
-const packages = [
-  {
-    id: "basic",
-    name: "Basic Package",
-    description: "Suitable for beginners and individuals.",
-    image: "https://via.placeholder.com/150",
-  },
-  {
-    id: "pro",
-    name: "Pro Package",
-    description: "Ideal for professionals and teams.",
-    image: "https://via.placeholder.com/150",
-  },
-  {
-    id: "enterprise",
-    name: "Enterprise Package",
-    description: "Perfect for large organizations.",
-    image: "https://via.placeholder.com/150",
-  },
+const steps = [
+  "Participant Information",
+  "Package Selection",
+  "Payment",
+  "Confirmation",
 ];
-
-
-
-
-const steps = ["Account Info", "Package Details", "Confirmation"];
 
 export const RegistrationForm = ({ open, onClose }) => {
   const [activeStep, setActiveStep] = useState(0);
-  const [registrationType, setRegistrationType] = useState("Public");
-  const [selectedPackage, setSelectedPackage] = useState(null);
+  const [registrationType, setRegistrationType] = useState("USM Student");
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -71,144 +47,72 @@ export const RegistrationForm = ({ open, onClose }) => {
     setRegistrationType(type);
   };
 
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    usmStudentId: "",
-    faculty: "",
-    phoneNumber: "",
-  });
-  
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
-
   const renderStepContent = (step) => {
     switch (step) {
       case 0: // Account Info
         return (
           <Box>
-            <TextField
-              fullWidth
-              label="Full Name"
-              name="fullName"
-              placeholder="Full name as per IC/Passport"
-              margin="normal"
-              value={formData.fullName}
-              onChange={handleInputChange}
-            />
-            <TextField
-              fullWidth
-              label="Email Address"
-              name="email"
-              placeholder="Enter your email"
-              margin="normal"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-            <TextField
-              fullWidth
-              label="Password"
-              name="password"
-              placeholder="8 - 12 characters"
-              margin="normal"
-              type="password"
-              value={formData.password}
-              onChange={handleInputChange}
-            />
-            <TextField
-              fullWidth
-              label="Confirm Password"
-              name="confirmPassword"
-              placeholder="Retype your password"
-              margin="normal"
-              type="password"
-              value={formData.confirmPassword}
-              onChange={handleInputChange}
-            />
             {registrationType === "USM Student" ? (
-              <>
-                <TextField
-                  fullWidth
-                  label="USM Student ID"
-                  name="usmStudentId"
-                  placeholder="Enter your student ID"
-                  margin="normal"
-                  value={formData.usmStudentId}
-                  onChange={handleInputChange}
-                />
-                <TextField
-                  fullWidth
-                  label="Faculty"
-                  name="faculty"
-                  placeholder="Enter your faculty"
-                  margin="normal"
-                  value={formData.faculty}
-                  onChange={handleInputChange}
-                />
-              </>
+              <StudentRegistration />
             ) : (
-              <TextField
-                fullWidth
-                label="Phone Number"
-                name="phoneNumber"
-                placeholder="Enter your phone number"
-                margin="normal"
-                value={formData.phoneNumber}
-                onChange={handleInputChange}
-              />
+              <PublicRegistration />
             )}
           </Box>
         );
-      case 1: //package selection
+      case 1: //Package Selection
         return (
-          <Box display="flex" flexWrap="wrap" gap={2} justifyContent="center">
-          {packages.map((pkg) => (
-            <Card
-              key={pkg.id}
-              onClick={() => setSelectedPackage(pkg.id)}
-              sx={{
-                width: 250,
-                border: selectedPackage === pkg.id ? "2px solid #6d588b" : "1px solid #ccc",
-                borderRadius: 2,
-                cursor: "pointer",
-                "&:hover": { borderColor: "#6d588b" },
-              }}
-            >
-              <img
-                src={pkg.image}
-                alt={pkg.name}
-                style={{ width: "100%", height: 150, objectFit: "cover" }}
-              />
-              <Box padding={2}>
-                <h3 style={{ margin: 0, color: selectedPackage === pkg.id ? "#6d588b" : "#000" }}>
-                  {pkg.name}
-                </h3>
-                <p style={{ fontSize: "0.9em", color: "#555" }}>{pkg.description}</p>
-              </Box>
-            </Card>
-          ))}
-        </Box>
+          <Box>
+            <PackageSelection />
+          </Box>
         );
-      case 2: // Confirmation
-        return <p>Review your details and submit to complete registration.</p>;
+      case 2: // Payment
+        return (
+          <Box>
+            {" "}
+            <TransactionModal />{" "}
+          </Box>
+        );
+      case 3: // Success Screen
+        return (
+          <Box>
+            {" "}
+            <SuccessfulRegistration />{" "}
+          </Box>
+        );
       default:
         return <p>Unknown step</p>;
     }
   };
-  
+
+  console.log("onClose prop in RegistrationForm:", onClose);
 
   return (
     <ThemeProvider theme={theme}>
-      <Modal open={open} onClose={handleClose}>
+      <Modal
+        open={open}
+        // onClose={handleClose}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+
+          alignItems: "start",
+          overflow: "scroll",
+        }}
+      >
         <Box className={styles.modalContent}>
-          <h2 className={styles.modalTitle}>Registration</h2>
+          <button
+            className={styles.closeButton}
+            aria-label="Close registration form"
+            onClick={onClose}
+          >
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/fb2c95ce6a8d473e94eb0b0c97b334f0/f9c1e4fb612255943eac4158feb6ec4bd22fb1491781e95cc8a7cef092677e64?apiKey=fb2c95ce6a8d473e94eb0b0c97b334f0&"
+              className={styles.closeIcon}
+              alt=""
+            />
+          </button>
+          <h2 className={styles.modalTitle}>{steps[activeStep]}</h2>
 
           {/* Stepper */}
           <Stepper
@@ -216,16 +120,16 @@ export const RegistrationForm = ({ open, onClose }) => {
             alternativeLabel
             sx={{
               "& .MuiStepIcon-root": {
-                color: "#d3c3e0", 
+                color: "#d3c3e0",
               },
               "& .MuiStepIcon-text": {
-                fill: "#ffffff", 
+                fill: "#ffffff",
               },
               "& .MuiStepIcon-active": {
-                color: "#6d588b", 
+                color: "#6d588b",
               },
               "& .MuiStepIcon-completed": {
-                color: "#6d588b", 
+                color: "#6d588b",
               },
             }}
           >
@@ -234,7 +138,10 @@ export const RegistrationForm = ({ open, onClose }) => {
                 <StepLabel
                   sx={{
                     "& .MuiStepLabel-label": {
-                      color: activeStep === steps.indexOf(label) ? "#6d588b" : "#6d588b80", 
+                      color:
+                        activeStep === steps.indexOf(label)
+                          ? "#6d588b"
+                          : "#6d588b70",
                     },
                   }}
                 >
@@ -244,38 +151,36 @@ export const RegistrationForm = ({ open, onClose }) => {
             ))}
           </Stepper>
 
-          {/* Toggle Registration Type */}
-          <Box className={styles.toggleButtons}>
-            <Button
-              variant={registrationType === "USM Student" ? "contained" : "outlined"}
-              onClick={() => handleRegistrationTypeChange("USM Student")}
-              sx={{
-                color: registrationType === "USM Student" ? "#ffffff" : "#6d588b",
-                backgroundColor: registrationType === "USM Student" ? "#6d588b" : "transparent",
-                borderColor: "#6d588b",
-                "&:hover": {
-                  backgroundColor: registrationType === "USM Student" ? "#5a4676" : "#e0e0e0",
-                },
-              }}
-            >
-              USM Student
-            </Button>
-            <Button
-              variant={registrationType === "Public" ? "contained" : "outlined"}
-              onClick={() => handleRegistrationTypeChange("Public")}
-              sx={{
-                color: registrationType === "Public" ? "#ffffff" : "#6d588b",
-                backgroundColor: registrationType === "Public" ? "#6d588b" : "transparent",
-                borderColor: "#6d588b",
-                "&:hover": {
-                  backgroundColor: registrationType === "Public" ? "#5a4676" : "#e0e0e0",
-                },
-              }}
-            >
-              Public
-            </Button>
-          </Box>
-
+          {/* Toggle Registration Type only for participation account*/}
+          {activeStep === 0 ? (
+            <Box className={styles.toggleButtons}>
+              <Button
+                variant={
+                  registrationType === "USM Student" ? "outlined" : "text"
+                }
+                onClick={() => handleRegistrationTypeChange("USM Student")}
+                sx={{
+                  fontFamily: "Poppins",
+                  borderColor: "#6d588b",
+                  color:
+                    registrationType === "USM Student" ? "#6d588b" : "#9a9a9a",
+                }}
+              >
+                USM Student
+              </Button>
+              <Button
+                variant={registrationType === "Public" ? "outlined" : "text"}
+                onClick={() => handleRegistrationTypeChange("Public")}
+                sx={{
+                  fontFamily: "Poppins",
+                  color: registrationType === "Public" ? "#6d588b" : "#9a9a9a",
+                  borderColor: "#6d588b",
+                }}
+              >
+                Public
+              </Button>
+            </Box>
+          ) : null}
           {/* Step Content */}
           <Box className={styles.stepContent}>
             {renderStepContent(activeStep)}
@@ -288,6 +193,7 @@ export const RegistrationForm = ({ open, onClose }) => {
               disabled={activeStep === 0}
               onClick={handleBack}
               sx={{
+                fontFamily: "Poppins",
                 color: "#6d588b",
                 borderColor: "#6d588b",
                 "&:hover": {
@@ -302,11 +208,23 @@ export const RegistrationForm = ({ open, onClose }) => {
                 variant="contained"
                 color="primary"
                 onClick={handleClose}
+                sx={{
+                  fontFamily: "Poppins",
+                  color: "#ffff",
+                }}
               >
-                Finish
+                Done
               </Button>
             ) : (
-              <Button variant="contained" color="primary" onClick={handleNext}>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleNext}
+                sx={{
+                  fontFamily: "Poppins",
+                  color: "#ffff",
+                }}
+              >
                 Next
               </Button>
             )}

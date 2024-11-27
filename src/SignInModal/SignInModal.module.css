@@ -1,0 +1,108 @@
+.modalContent {
+  position: absolute;
+  background-color: white; 
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+}
+
+.modalTitle {
+  font-family: Poppins;
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+  color: #6d588b;
+}
+
+.closeButton {
+  border-radius: 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  width: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.closeIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/*KIV*/
+.welcomeText {
+  margin-top: 5%;
+  font-size: 24px;
+  font-family: Poppins;
+  color: #000;
+  font-weight: 500;
+  padding: 50px 10px 0;
+  text-align: center;
+}
+
+.formContent {
+  display: flex;
+  /* margin-top: 50px; */
+  flex-direction: column;
+  font-family: Poppins, sans-serif;
+  padding: 20px 10px;
+}
+
+.modalFooter {
+  padding: 20px 10px;
+}
+
+.nextButton {
+  width: 100%;
+  border-radius: 10px;
+  background: #6d588b;
+  min-height: 70px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.signUpSection {
+  margin-top: 29px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.orText {
+  color: #6d588b;
+}
+
+.signUpText {
+  margin-top: 13px;
+  color: #000;
+}
+
+.signUpLink {
+  text-decoration: underline;
+  color: #7c678f;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+@media (max-width: 991px) {
+  .formContent,
+  .modalFooter,
+  .formContent {
+    margin-top: 40px;
+  }
+
+  .nextButton {
+    padding: 0 20px;
+  }
+}

@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
+import { useLocation } from "react-router-dom";
+
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
-import SignInModal from '../SignIn/SignInModal';
+import {SignInModal} from '../SignInModal/SignInModal';
 
 export const Header = () => {
+  const location = useLocation();
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const toggleModal = () => {
-    setModalOpen(!isModalOpen);
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+  // const [isModalOpen, setModalOpen] = useState(false);
+
+  // const toggleModal = () => {
+  //   setModalOpen(!isModalOpen);
+  // };
 
   return (
     <header className={styles.header}>
@@ -21,18 +32,19 @@ export const Header = () => {
       </div>
       <div className={styles.authContainer}>
         {/* Open SignInModal on Sign In button click */}
-        {/* <button className={styles.signInButton} onClick={toggleModal}>
+        <button className={styles.signInButton} onClick={openModal}>
           Sign In
-        </button> */}
-        <Link to='/home-signed-in-page'>
+        </button>
+        {/* <Link to='/home-signed-in-page'>
           <button className={styles.signInButton}>Sign In</button>
-        </Link>
+        </Link> */}
         <Link to='/admin-sign-in-page'>
           <button className={styles.adminButton}>Admin</button>
         </Link>
       </div>
+      <SignInModal open={isModalOpen} onClose={closeModal}/>
       {/* Render the SignInModal when isModalOpen is true */}
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <SignInModal
           isOpen={isModalOpen}
           onClose={toggleModal} // Close modal when onClose is triggered
@@ -41,7 +53,8 @@ export const Header = () => {
             setModalOpen(false); // Close modal after Sign In action
           }}
         />
-      )}
+      )} */}
+
     </header>
   );
 };

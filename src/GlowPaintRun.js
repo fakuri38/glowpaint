@@ -1,61 +1,64 @@
-import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import styles from './GlowPaintRun.module.css';
-import { ComponentHeader } from './components/ComponentHeader';
-import { Header } from './HomePage/Header';
-import HeroSection from './HomePage/HeroSection';
-import InfoSection from './HomePage/InfoSection';
-import AboutUs from './HomePage/AboutUs';
-import Gallery from './HomePage/Gallery';
-import { Footer } from './HomePage/Footer';
-import { ComponentFooter } from './components/ComponentFooter';
-import EventPage from './EventPage/EventPage';
-import SignInPage from './SignInPage/SignInPage';
-import SignUpPage from './SignUpPage/SignUpPage';
-import HomeSignedInPage from './HomeSignedIn/HomeSignedInPage';
-import EventSignedInPage from './EventSignedIn/EventSignedInPage';
-import KitPage from './KitPage/KitPage';
-import TermsConditionPage from './TermsConditionPage/TermsConditionPage';
-import TermsConditionSignedInPage from './TermsConditionSignedIn/TermsConditionSignedInPage';
-import AdminDashboardPage from './AdminDashboard/AdminDashboardPage';
-import AdminKitPage from './AdminKit/AdminKitPage';
-import AdminPartList from './AdminPartList/AdminPartList';
-import AdminPaymentList from './AdminPaymentList/AdminPaymentList';
-import AdminAttList from './AdminAttList/AdminAttList';
-import { RegistrationForm } from './RegistrationForm/RegistrationForm';
-import { AdminSignIn } from './AdminSignIn/AdminSignIn';
-// import ScrollToTop from './ScrollToTop';
+import React, { useEffect, useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import styles from "./GlowPaintRun.module.css";
+import { ComponentHeader } from "./components/ComponentHeader";
+import { Header } from "./HomePage/Header";
+import HeroSection from "./HomePage/HeroSection";
+import InfoSection from "./HomePage/InfoSection";
+import AboutUs from "./HomePage/AboutUs";
+import Gallery from "./HomePage/Gallery";
+import { Footer } from "./HomePage/Footer";
+import { ComponentFooter } from "./components/ComponentFooter";
+import EventPage from "./EventPage/EventPage";
+import HomeSignedInPage from "./HomeSignedIn/HomeSignedInPage";
+import EventSignedInPage from "./EventSignedIn/EventSignedInPage";
+import KitPage from "./KitPage/KitPage";
+import TermsConditionPage from "./TermsConditionPage/TermsConditionPage";
+import TermsConditionSignedInPage from "./TermsConditionSignedIn/TermsConditionSignedInPage";
+import AdminDashboardPage from "./AdminDashboard/AdminDashboardPage";
+import AdminKitPage from "./AdminKit/AdminKitPage";
+import AdminPartList from "./AdminPartList/AdminPartList";
+import AdminPaymentList from "./AdminPaymentList/AdminPaymentList";
+import AdminAttList from "./AdminAttList/AdminAttList";
+import { AdminSignIn } from "./AdminSignIn/AdminSignIn";
+import ECert from "./E-Cert/e-cert"
+// import { RegistrationForm } from "./RegistrationForm/RegistrationForm";
 
+// import ScrollToTop from './ScrollToTop';
 function GlowPaintRun() {
   const location = useLocation();
-  const [isModalOpen, setModalOpen] = useState(false); // State to manage modal visibility
+
+  //Modal PopUp
+  // const [isModalOpen, setModalOpen] = useState(false);
+
+  // Function to toggle modal visibility
+  // const toggleModal = () => {
+  //   setModalOpen(!isModalOpen);
+  // };
 
   // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
-  
-  // Function to toggle modal visibility
-  const toggleModal = () => {
-    setModalOpen(!isModalOpen);
-  };
 
   // Function to determine the correct header based on the current route
   const renderHeader = () => {
     switch (location.pathname) {
-      case '/':
+      case "/":
         return <Header />;
-      case '/event-page':
+      case "/event-page":
         return <Header />;
-      case '/terms-condition-page':
+      case "/terms-condition-page":
         return <Header />;
-      case '/home-signed-in-page':
+      case "/home-signed-in-page":
         return <ComponentHeader />;
-      case '/event-signed-in-page':
+      case "/event-signed-in-page":
         return <ComponentHeader />;
-      case '/kit-page':
+      case "/ecert":
         return <ComponentHeader />;
-      case '/terms-condition-signed-in-page':
+      case "/kit-page":
+        return <ComponentHeader />;
+      case "/terms-condition-signed-in-page":
         return <ComponentHeader />;
       // default:
       //   return <Header />;
@@ -64,17 +67,17 @@ function GlowPaintRun() {
 
   const renderFooter = () => {
     switch (location.pathname) {
-      case '/':
+      case "/":
         return <Footer />;
-      case '/event-page':
+      case "/event-page":
         return <Footer />;
-      case '/home-signed-in-page':
+      case "/home-signed-in-page":
         return <ComponentFooter />;
-      case '/event-signed-in-page':
+      case "/event-signed-in-page":
         return <ComponentFooter />;
-      case '/kit-page':
+      case "/kit-page":
         return <ComponentFooter />;
-      case '/terms-condition-page':
+      case "/terms-condition-page":
         return <ComponentFooter />;
       // default:
       //   return <Footer />;
@@ -87,26 +90,34 @@ function GlowPaintRun() {
       {renderHeader()}
       <main>
         <Routes>
-          <Route path='/' element={<HeroSection onRegisterNowClick={toggleModal} />} />
-          <Route path='/event-page' element={<EventPage />} />
-          <Route path='/kit-page' element={<KitPage />} />
-          <Route path='/sign-in-page' element={<SignInPage />} />
-          <Route path='/sign-up-page' element={<SignUpPage />} />
-          <Route path='/home-signed-in-page' element={<HomeSignedInPage />} />
-          <Route path='/event-signed-in-page' element={<EventSignedInPage />} />
-          <Route path='/kit-page' element={<KitPage />} />
-          <Route path='/terms-condition-page' element={<TermsConditionPage />} />
-          <Route path='/terms-condition-signed-in-page' element={<TermsConditionSignedInPage />} />
+          <Route path="/" element={<HeroSection />} />
+          <Route path="/event-page" element={<EventPage />} />
+          <Route path="/kit-page" element={<KitPage />} />
+          <Route path="/home-signed-in-page" element={<HomeSignedInPage />} />
+          <Route path="/event-signed-in-page" element={<EventSignedInPage />} />
+          <Route path="/kit-page" element={<KitPage />} />
+          <Route
+            path="/terms-condition-page"
+            element={<TermsConditionPage />}
+          />
+          <Route
+            path="/terms-condition-signed-in-page"
+            element={<TermsConditionSignedInPage />}
+          />
           {/* admin */}
-          <Route path='/admin-sign-in-page' element={<AdminSignIn />} />
-          <Route path='/admin-dashboard-page' element={<AdminDashboardPage />} />
-          <Route path='/admin-kit-page' element={<AdminKitPage />} />
-          <Route path='/admin-participant-page' element={<AdminPartList />} />
-          <Route path='/admin-payment-page' element={<AdminPaymentList />} />
-          <Route path='/admin-att-page' element={<AdminAttList />} />
+          <Route path="/admin-sign-in-page" element={<AdminSignIn />} />
+          <Route
+            path="/admin-dashboard-page"
+            element={<AdminDashboardPage />}
+          />
+          <Route path="/admin-kit-page" element={<AdminKitPage />} />
+          <Route path="/admin-participant-page" element={<AdminPartList />} />
+          <Route path="/admin-payment-page" element={<AdminPaymentList />} />
+          <Route path="/admin-att-page" element={<AdminAttList />} />
+          <Route path="/ecert" element={<ECert />} />
         </Routes>
 
-        {location.pathname === '/' && (
+        {location.pathname === "/" && (
           <>
             <InfoSection
               title="Sign Up"
@@ -135,14 +146,12 @@ function GlowPaintRun() {
           </>
         )}
       </main>
-
       {/* Conditionally render the modal outside the main layout */}
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <div className={styles.modalOverlay}>
           <RegistrationForm />
         </div>
-      )}
-
+      )} */}
       {renderFooter()}
     </div>
   );

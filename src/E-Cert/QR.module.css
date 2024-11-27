@@ -1,0 +1,56 @@
+/* Isolate the page layout */
+.pageWrapper {
+    all: unset; /* Resets inherited styles from parent */
+    font-family: 'Arial', sans-serif;
+    height: 100vh !important; /* Ensures it occupies full viewport height */
+    width: 100% !important; /* Ensures it spans full width */
+    background-color: #f4ebe6; /* Light beige */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden; /* Prevents external scrolling issues */
+  }
+  
+  .header {
+    background-color: #6a2c91; /* Purple */
+    width: 100%; /* Full width of page */
+    text-align: center;
+    padding: 10px 0;
+    box-sizing: border-box; /* Includes padding in width calculation */
+  }
+  
+  .headerText {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* Ensures main content takes remaining space */
+    width: 100%; /* Full width of page */
+    max-width: 400px; /* Restricts content width for proper alignment */
+    text-align: center;
+  
+  }
+  
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #6a2c91; /* Purple */
+    margin: 20px 0;
+  }
+  
+  .qrCode {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }

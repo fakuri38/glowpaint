@@ -1,9 +1,6 @@
 .modalContent {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: white; 
   padding: 24px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -11,10 +8,18 @@
   max-width: 600px;
 }
 
+.formContent {
+  width: 100%;
+
+}
+
 .modalTitle {
-  font-size: 24px;
+  font-family: Poppins;
+  font-size: 38px;
+  font-weight: bold;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 10%;
+  margin-top: 7%;
   color: #6d588b;
 }
 
@@ -28,7 +33,31 @@
   margin-top: 16px;
 }
 
-.nextButton {
+.toggleButtons {
+  display: flex;
+  justify-content: space-around; /* Centers the buttons horizontally */
+  /* gap: 70px;  */
+  margin: 20px 0;
+  /* padding-left: 25%;
+  padding-right: 25%; */
+}
+
+.closeButton {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f3f3;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+/* .nextButton {
   background-color: #6d588b;
   color: white;
 }
@@ -40,24 +69,40 @@
 .backButton {
   color: #6d588b;
   border-color: #6d588b;
-}
+} */
 
-.toggleButtons {
-  display: flex;
-  justify-content: center; /* Centers the buttons horizontally */
-  gap: 10px; /* Adds space between the buttons */
-  margin: 20px 0; /* Adds space above and below the buttons */
-}
-
-.toggleButton {
+/* .toggleButton {
   flex: 1;
   margin: 0 5px;
-}
+  width: 100px;
+} */
 
-.toggleButton:first-of-type {
+/* .toggleButton:first-of-type {
   margin-left: 0;
 }
 
 .toggleButton:last-of-type {
   margin-right: 0;
+} */
+
+/* .activeButton {
+  font-family: "Poppins";
+  color: #ffffff;
+  background-color: #6d588b;
+  border-color: #6d588b;
 }
+
+.activeButton:hover {
+  background-color: #5a4676;
+}
+
+.inActiveButton {
+  font-family: "Poppins";
+  color: #6d588b;
+  background-color: transparent;
+  border-color: #6d588b;
+} */
+
+/* .inActiveButton:hover {
+  background-color: #e0e0e0;
+} */

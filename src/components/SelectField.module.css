@@ -1,0 +1,46 @@
+.fieldWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 4px 0; 
+    flex: 1;
+    position: relative;
+  }
+   
+  .label {
+    font-family: Poppins, 'Bold';
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 5px;
+  }
+  
+  .select {
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background: #fff;
+    padding: 10px;
+    font: 400 17px Poppins;
+    color: rgb(0, 0, 0);
+  }
+
+  .select:active, .select:focus{
+    border: 2px solid #6D588B;
+    outline: none;
+  }
+
+  .placeHolder{
+    /* border-radius: 10px; */
+    background: #fff;
+    font: 300 17px Poppins, sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    width: 100%;
+  }
+  
+  @media (max-width: 991px) {
+    .fieldWrapper {
+      max-width: 100%;
+    }
+  }
