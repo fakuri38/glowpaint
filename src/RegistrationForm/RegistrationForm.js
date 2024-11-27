@@ -7,6 +7,7 @@ import {
   StepLabel,
   Stepper,
   TextField,
+  Card,
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import styles from "./RegistrationForm.module.css";
@@ -22,12 +23,36 @@ const theme = createTheme({
   },
 });
 
+const packages = [
+  {
+    id: "basic",
+    name: "Basic Package",
+    description: "Suitable for beginners and individuals.",
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    id: "pro",
+    name: "Pro Package",
+    description: "Ideal for professionals and teams.",
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    id: "enterprise",
+    name: "Enterprise Package",
+    description: "Perfect for large organizations.",
+    image: "https://via.placeholder.com/150",
+  },
+];
+
+
+
 
 const steps = ["Account Info", "Package Details", "Confirmation"];
 
 export const RegistrationForm = ({ open, onClose }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [registrationType, setRegistrationType] = useState("Public");
+  const [selectedPackage, setSelectedPackage] = useState(null);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -46,6 +71,24 @@ export const RegistrationForm = ({ open, onClose }) => {
     setRegistrationType(type);
   };
 
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    usmStudentId: "",
+    faculty: "",
+    phoneNumber: "",
+  });
+  
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
   const renderStepContent = (step) => {
     switch (step) {
       case 0: // Account Info
@@ -54,87 +97,104 @@ export const RegistrationForm = ({ open, onClose }) => {
             <TextField
               fullWidth
               label="Full Name"
+              name="fullName"
               placeholder="Full name as per IC/Passport"
               margin="normal"
+              value={formData.fullName}
+              onChange={handleInputChange}
             />
             <TextField
               fullWidth
               label="Email Address"
+              name="email"
               placeholder="Enter your email"
               margin="normal"
+              value={formData.email}
+              onChange={handleInputChange}
             />
             <TextField
               fullWidth
               label="Password"
+              name="password"
               placeholder="8 - 12 characters"
               margin="normal"
               type="password"
+              value={formData.password}
+              onChange={handleInputChange}
             />
             <TextField
               fullWidth
               label="Confirm Password"
+              name="confirmPassword"
               placeholder="Retype your password"
               margin="normal"
               type="password"
-            />
-                        {registrationType === "USM Student" ? (
-              <>
-                <TextField
-                  fullWidth
-                  label="USM Student ID"
-                  placeholder="Enter your student ID"
-                  margin="normal"
-                />
-                <TextField
-                  fullWidth
-                  label="Faculty"
-                  placeholder="Enter your faculty"
-                  margin="normal"
-                />
-              </>
-            ) : (
-              <TextField
-                fullWidth
-                label="Phone Number"
-                placeholder="Enter your phone number"
-                margin="normal"
-              />
-            )}
-          </Box>
-        );
-      case 1: 
-        return (
-          <Box>
-            <TextField
-              fullWidth
-              label="Full Name"
-              placeholder="Full name as per IC/Passport"
-              margin="normal"
+              value={formData.confirmPassword}
+              onChange={handleInputChange}
             />
             {registrationType === "USM Student" ? (
               <>
                 <TextField
                   fullWidth
                   label="USM Student ID"
+                  name="usmStudentId"
                   placeholder="Enter your student ID"
                   margin="normal"
+                  value={formData.usmStudentId}
+                  onChange={handleInputChange}
                 />
                 <TextField
                   fullWidth
                   label="Faculty"
+                  name="faculty"
                   placeholder="Enter your faculty"
                   margin="normal"
+                  value={formData.faculty}
+                  onChange={handleInputChange}
                 />
               </>
             ) : (
               <TextField
                 fullWidth
                 label="Phone Number"
+                name="phoneNumber"
                 placeholder="Enter your phone number"
                 margin="normal"
+                value={formData.phoneNumber}
+                onChange={handleInputChange}
               />
             )}
           </Box>
+        );
+      case 1: //package selection
+        return (
+          <Box display="flex" flexWrap="wrap" gap={2} justifyContent="center">
+          {packages.map((pkg) => (
+            <Card
+              key={pkg.id}
+              onClick={() => setSelectedPackage(pkg.id)}
+              sx={{
+                width: 250,
+                border: selectedPackage === pkg.id ? "2px solid #6d588b" : "1px solid #ccc",
+                borderRadius: 2,
+                cursor: "pointer",
+                "&:hover": { borderColor: "#6d588b" },
+              }}
+            >
+              <img
+                src={pkg.image}
+                alt={pkg.name}
+                style={{ width: "100%", height: 150, objectFit: "cover" }}
+              />
+              <Box padding={2}>
+                <h3 style={{ margin: 0, color: selectedPackage === pkg.id ? "#6d588b" : "#000" }}>
+                  {pkg.name}
+                </h3>
+                <p style={{ fontSize: "0.9em", color: "#555" }}>{pkg.description}</p>
+              </Box>
+            </Card>
+          ))}
+        </Box>
         );
       case 2: // Confirmation
         return <p>Review your details and submit to complete registration.</p>;
